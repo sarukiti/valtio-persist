@@ -7,6 +7,7 @@ import type {
 } from "./types"
 import { LocalStorageStrategy } from "./storage/localStorage"
 import { DefaultMergeStrategy } from "./merge/default"
+import { DeepMergeStrategy } from "./merge/deepMerge"
 import { JSONSerializationStrategy } from "./serialization/json"
 import { debounce, updateStore } from "./utils"
 import type { HistoryOptions } from "./history"
@@ -15,6 +16,12 @@ export type * from "./types"
 
 // Export all storage strategies
 export * from "./storage"
+
+// Export merge strategies
+export {
+	DefaultMergeStrategy,
+	DeepMergeStrategy
+}
 
 // Define your options type (without the key)
 interface PersistOptions<T extends object> {
